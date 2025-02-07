@@ -1,0 +1,25 @@
+{
+  "frames": {
+    "peanut0.png": {
+      "frame": { "x": 0, "y": 0, "w": 608, "h": 608 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 608, "h": 608 },
+      "sourceSize": { "w": 608, "h": 608 }
+    },
+    "peanut1.png": {
+      "frame": { "x": 0, "y": 608, "w": 608, "h": 608 },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": { "x": 0, "y": 0, "w": 608, "h": 608 },
+      "sourceSize": { "w": 608, "h": 608 }
+    }
+  },
+  "meta": {
+    "app": "https://github.com/piskelapp/piskel/",
+    "version": "1.0",
+    "image": "peanut.png",
+    "format": "RGBA8888",
+    "size": { "w": 608, "h": 1216 }
+  }
+}

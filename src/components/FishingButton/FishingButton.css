@@ -1,0 +1,15 @@
+.fishingButton {
+  align-self: center;
+  background-color: #cdb4db;
+  border-color: #423f44;
+  border-radius: 10px;
+  text-align: center;
+  border-style: solid;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.fishingButton:hover {
+  background-color: #e9dcef;
+  cursor: pointer;
+}

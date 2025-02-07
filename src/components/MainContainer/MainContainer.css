@@ -1,0 +1,12 @@
+.mainContainer {
+  max-height: 80vh;
+  position: relative;
+}
+
+.fishingContainer {
+  /* position: absolute;
+  bottom: 0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

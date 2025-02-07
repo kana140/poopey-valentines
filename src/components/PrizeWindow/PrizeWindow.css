@@ -1,0 +1,11 @@
+.prizeWindow {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.3);
+  text-align: center;
+  height: 10%;
+}
+
+.prizeWindow img {
+  cursor: pointer;
+}

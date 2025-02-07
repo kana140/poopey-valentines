@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import PeanutSprite from "./components/PeanutSprite/Peanut";
+import { Stack } from "@mui/material";
+import MainContainer from "./components/MainContainer/MainContainer";
+import LoadingBar from "./components/LoadingBar/LoadingBar";
+import { useState, useEffect } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <MainContainer></MainContainer>
+      <BottomContainer />
     </div>
   );
 }
 
 export default App;
+
+function WelcomeText() {
+  return <div>Welcome Mr.Poopey!</div>;
+}
+
+function BottomContainer() {
+  const now = new Date();
+  const sixPM = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    18,
+    0,
+    0,
+    0
+  );
+  const currentHour = now.getHours();
+  var nextTime = "9am";
+  if (currentHour >= 9 && currentHour < 12) nextTime = "12pm";
+  else if (currentHour >= 12 && currentHour < 15) nextTime = "3pm";
+  else if (currentHour >= 15 && currentHour < 18) nextTime = "6pm";
+
+  const duration = (sixPM.getTime() - now.getTime()) / 1000;
+
+  return (
+    <div className="bottom">
+      <WelcomeText />
+      <LoadingBar duration={duration}></LoadingBar>
+      <p>Come back at {nextTime} to fish for your next gift! (real)</p>
+    </div>
+  );
+}
