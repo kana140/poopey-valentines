@@ -1,6 +1,5 @@
 .mainContainer {
-  max-height: 80vh;
-  position: relative;
+  /* max-height: 80vh; */
 }
 
 .fishingContainer {
@@ -8,5 +7,11 @@
   bottom: 0; */
   display: flex;
   flex-direction: column;
+  gap: 20px;
   align-items: center;
+}
+
+.foundItems {
+  background-color: blue;
+  width: 50%;
 }

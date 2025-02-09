@@ -1,11 +1,14 @@
 .prizeWindow {
   display: flex;
   justify-content: center;
-  transform: scale(0.3);
+
   text-align: center;
-  height: 10%;
+  height: auto;
 }
 
 .prizeWindow img {
   cursor: pointer;
+  transform: scale(0.5);
+  width: 50%;
+  height: auto;
 }

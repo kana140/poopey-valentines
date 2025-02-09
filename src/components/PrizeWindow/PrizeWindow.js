@@ -12,7 +12,9 @@ export default function PrizeWindow({
       onClick={() => setPrizeWindow(false)}
       style={{ display: showPrizeWindow ? "block" : "none" }}
     >
-      <img src={prize?.image}></img>
+      <div className="image-wrapper">
+        <img src={prize?.image}></img>
+      </div>
       <p> You caught... {prize?.item}!</p> <br />
       <p> Click to collect</p>
     </div>
