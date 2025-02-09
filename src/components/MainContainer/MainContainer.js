@@ -49,21 +49,25 @@ export default function MainContainer() {
   const checkHour = (currentHour) => {
     if (currentHour >= 9 && currentHour < 12) return "9";
     else if (currentHour >= 12 && currentHour < 3) return "12";
-    else if (currentHour >= 3 && currentHour < 6) return "3";
-    else if (currentHour >= 6) return "6";
+    else if (currentHour >= 3 && currentHour < 6) return "15";
+    else if (currentHour >= 6) return "18";
   };
 
   const [showPrizeWindow, setPrizeWindow] = useState(false);
 
   return (
     <div className="mainContainer">
-      <div className="fishingContainer">
+      <Stack direction="column" className="fishingContainer">
         <PrizeWindow
           prize={currentCatch}
           showPrizeWindow={showPrizeWindow}
           setPrizeWindow={setPrizeWindow}
         ></PrizeWindow>
+        {/* <div className="peanutAndGifts">
+          <div className="foundItems"> </div> */}
         <Peanut currentAnimation={currentAnimation}></Peanut>
+        {/* <div className="foundItems"></div>
+        </div> */}
 
         <FishingButton
           sx={{ cursor: fishingDisabled ? "not-allowed" : "pointer" }}
@@ -75,7 +79,7 @@ export default function MainContainer() {
             }, 3000);
           }}
         ></FishingButton>
-      </div>
+      </Stack>
     </div>
   );
 }
