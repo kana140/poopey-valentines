@@ -48,9 +48,9 @@ export default function MainContainer() {
 
   const checkHour = (currentHour) => {
     if (currentHour >= 9 && currentHour < 12) return "9";
-    else if (currentHour >= 12 && currentHour < 3) return "12";
-    else if (currentHour >= 3 && currentHour < 6) return "15";
-    else if (currentHour >= 6) return "18";
+    else if (currentHour >= 12 && currentHour < 15) return "12";
+    else if (currentHour >= 15 && currentHour < 18) return "15";
+    else if (currentHour >= 18) return "18";
   };
 
   const [showPrizeWindow, setPrizeWindow] = useState(false);
