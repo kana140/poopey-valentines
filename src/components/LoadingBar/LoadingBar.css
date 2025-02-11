@@ -7,7 +7,7 @@
 }
 
 .loading-bar {
-  height: 20px;
+  height: 40px;
   background-color: #ffafcc;
   border-radius: 15px;
   transition: width 1s linear;

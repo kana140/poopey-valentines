@@ -4,7 +4,7 @@ import convertSeconds from "convert-seconds";
 
 const LoadingBar = ({ duration }) => {
   const [timeLeft, setTimeLeft] = useState(duration); // Time in seconds
-  const [percentage, setPercentage] = useState(100); // Starting at 100%
+  const [percentage, setPercentage] = useState(0); // Starting at 100%
   // Update every second
   useEffect(() => {
     if (timeLeft > 0) {

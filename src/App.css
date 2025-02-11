@@ -1,11 +1,12 @@
-body {
+html,
+body,
+.app,
+#root {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: #bde0fe;
 }
-
-.app {
-  /* max-height: 100vh; */
-}
-
 .bottom {
   font-size: calc(20px + 4vmin);
   color: white;
@@ -15,8 +16,19 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 5%;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bottom > div,
+p {
+  margin: 10px;
+}
 .bottom p {
   font-size: calc(5px + 2vmin);
 }
