@@ -5,6 +5,7 @@ import { Stack } from "@mui/material";
 import MainContainer from "./components/MainContainer/MainContainer";
 import LoadingBar from "./components/LoadingBar/LoadingBar";
 import { useState, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   return (
