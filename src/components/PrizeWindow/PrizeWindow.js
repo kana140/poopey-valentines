@@ -6,6 +6,7 @@ export default function PrizeWindow({
   showPrizeWindow,
   setPrizeWindow,
 }) {
+  var randomPrize = ["giorno", "claw machine"].includes(prize?.item);
   return (
     <div
       className="prizeWindow"
@@ -15,7 +16,15 @@ export default function PrizeWindow({
       <div className="image-wrapper">
         <img src={prize?.image}></img>
       </div>
-      <p> You caught... {prize?.item}!</p> <br />
+      {randomPrize ? (
+        <p>
+          {" "}
+          Oh no! You caught {prize?.item}. Keep fishing to get the real prize{" "}
+        </p>
+      ) : (
+        <p> You caught... {prize?.item}!</p>
+      )}
+      <br />
       <p> Click to collect</p>
     </div>
   );
