@@ -44,7 +44,10 @@ function BottomContainer() {
     <div className="bottom">
       <WelcomeText />
       <LoadingBar></LoadingBar>
-      <p>Come back at {nextTime} to fish for your next gift! (real)</p>
+      <p>
+        🎣 Come back at {nextTime} to fish for your next gift! But watch out for
+        sneaky fake gifts!
+      </p>
     </div>
   );
 }
