@@ -3,6 +3,21 @@ import "./LoadingBar.css";
 import convertSeconds from "convert-seconds";
 
 const LoadingBar = () => {
+  const prizeTimes = [9, 12, 15, 18]; // Prize times at 9AM, 12PM, 3PM, and 6PM
+  const now = new Date();
+  const currentHour = now.getHours();
+
+  const getNextPrizeTime = () => {
+    for (let hour of prizeTimes) {
+      if (currentHour < hour) {
+        const nextPrize = new Date();
+        nextPrize.setHours(hour, 0, 0, 0);
+        return nextPrize;
+      }
+    }
+    return null; // No more prizes today
+  };
+
   const nineAM = new Date();
   nineAM.setHours(9, 0, 0, 0);
 
@@ -10,25 +25,23 @@ const LoadingBar = () => {
   sixPM.setHours(18, 0, 0, 0);
 
   const totalDuration = (sixPM.getTime() - nineAM.getTime()) / 1000;
-  const now = new Date().getTime();
-  const elapsedTime = (now - nineAM.getTime()) / 1000;
+  const elapsedTime = (now.getTime() - nineAM.getTime()) / 1000;
   const initialPercentage = Math.max(
     0,
     Math.min((elapsedTime / totalDuration) * 100, 100)
   );
-
-  const [timeLeft, setTimeLeft] = useState((sixPM.getTime() - now) / 1000);
+  const nextPrizeTime = getNextPrizeTime();
+  const [timeLeft, setTimeLeft] = useState(
+    nextPrizeTime ? (nextPrizeTime.getTime() - now.getTime()) / 1000 : 0
+  );
   const [percentage, setPercentage] = useState(initialPercentage);
 
   useEffect(() => {
-    if (timeLeft <= 0) {
-      setPercentage(100);
-      return;
-    }
+    if (!nextPrizeTime) return; // No more updates after 6PM
 
     const interval = setInterval(() => {
       const currentTime = new Date().getTime();
-      const remainingTime = (sixPM.getTime() - currentTime) / 1000;
+      const remainingTime = (nextPrizeTime.getTime() - currentTime) / 1000;
       const elapsedTime = (currentTime - nineAM.getTime()) / 1000;
 
       if (remainingTime <= 0) {
@@ -53,7 +66,7 @@ const LoadingBar = () => {
         {convertSeconds(Math.max(0, Math.floor(timeLeft))).hours} hours{" "}
         {convertSeconds(Math.max(0, Math.floor(timeLeft))).minutes} minutes and{" "}
         {convertSeconds(Math.max(0, Math.floor(timeLeft))).seconds} seconds left
-        to catch fish!
+        until your next prize!
       </div>
       <div className="time-markers">
         <span className="time-marker">9AM</span>
