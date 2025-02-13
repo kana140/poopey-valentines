@@ -6,7 +6,7 @@ export default function PrizeWindow({
   showPrizeWindow,
   setPrizeWindow,
 }) {
-  var randomPrize = ["giorno", "claw machine"].includes(prize?.item);
+  var randomPrize = ["giorno", "a claw machine"].includes(prize?.item);
   return (
     <div
       className="prizeWindow"
@@ -19,10 +19,11 @@ export default function PrizeWindow({
       {randomPrize ? (
         <p>
           {" "}
-          Oh no! You caught {prize?.item}. Keep fishing to get the real prize{" "}
+          Oh no! That's not a gift, that's {prize?.item}. Keep fishing to get
+          the real prize{" "}
         </p>
       ) : (
-        <p> You caught... {prize?.item}!</p>
+        <p> Jackpot! You caught... {prize?.item}!</p>
       )}
       <br />
       <p> Click to collect</p>

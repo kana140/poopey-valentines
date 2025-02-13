@@ -18,17 +18,17 @@ export default function MainContainer() {
     "09:00": [
       { item: "cookies", image: cookies },
       { item: "giorno", image: giorno },
-      { item: "claw machine", image: clawMachine },
+      { item: "a claw machine", image: clawMachine },
     ],
     "12:00": [
       { item: "voucher", image: ticket },
       { item: "giorno", image: giorno },
-      { item: "claw machine", image: clawMachine },
+      { item: "a claw machine", image: clawMachine },
     ],
     "15:00": [
       { item: "a picture", image: picture },
       { item: "giorno", image: giorno },
-      { item: "claw machine", image: clawMachine },
+      { item: "a claw machine", image: clawMachine },
     ],
     "18:00": [
       {
@@ -36,12 +36,11 @@ export default function MainContainer() {
         image: whiskey,
       },
       { item: "giorno", image: giorno },
-      { item: "claw machine", image: clawMachine },
+      { item: "a claw machine", image: clawMachine },
     ],
   };
 
   const [currentCatch, setCurrentCatch] = useState(null);
-  const scheduledTimes = Object.keys(fishingSchedule);
 
   const fish = () => {
     const now = new Date();
