@@ -3,4 +3,6 @@
   width: 30vw; */
   flex: 0 0 456px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }

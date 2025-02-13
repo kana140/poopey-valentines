@@ -3,6 +3,8 @@ import peanutFishingSprite from "../../assets/characters/peanutFishing/peanutfis
 import peanutFishingData from "../../assets/characters/peanutFishing/peanutfishing.json";
 import peanutIdleSprite from "../../assets/characters/peanutIdle/peanutidle.png";
 import peanutIdleData from "../../assets/characters/peanutIdle/peanutidle.json";
+import peanutShockedSprite from "../../assets/characters/peanutShocked/peanutshocked.png";
+import peanutShockedData from "../../assets/characters/peanutShocked/peanutshocked.json";
 import "./Peanut.css";
 
 export default function Peanut({ currentAnimation }) {
@@ -10,6 +12,7 @@ export default function Peanut({ currentAnimation }) {
   const animations = {
     idle: { json: peanutIdleData, image: peanutIdleSprite },
     fishing: { json: peanutFishingData, image: peanutFishingSprite },
+    shocked: { json: peanutShockedData, image: peanutShockedSprite },
     //shockedPeanut
   };
 
