@@ -45,8 +45,8 @@ function BottomContainer() {
       <WelcomeText />
       <LoadingBar></LoadingBar>
       <p>
-        🎣 Come back at {nextTime} to fish for your next gift! But watch out for
-        sneaky fake gifts!
+        🎣 A new gift appears every 3 hours! Come back at {nextTime} to fish for
+        yours—but watch out for sneaky fake gifts!
       </p>
     </div>
   );
