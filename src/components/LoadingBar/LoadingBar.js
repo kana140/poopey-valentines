@@ -50,9 +50,10 @@ const LoadingBar = () => {
     <div className="loading-container">
       <div className="loading-bar" style={{ width: `${percentage}%` }}></div>
       <div className="time-left">
-        {convertSeconds(timeLeft).hours} hours{" "}
-        {convertSeconds(timeLeft).minutes} minutes and{" "}
-        {convertSeconds(timeLeft).seconds} seconds left to catch fish!
+        {convertSeconds(Math.max(0, Math.floor(timeLeft))).hours} hours{" "}
+        {convertSeconds(Math.max(0, Math.floor(timeLeft))).minutes} minutes and{" "}
+        {convertSeconds(Math.max(0, Math.floor(timeLeft))).seconds} seconds left
+        to catch fish!
       </div>
       <div className="time-markers">
         <span className="time-marker">9AM</span>
