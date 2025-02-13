@@ -43,7 +43,7 @@ function BottomContainer() {
   return (
     <div className="bottom">
       <WelcomeText />
-      <LoadingBar duration={duration}></LoadingBar>
+      <LoadingBar></LoadingBar>
       <p>Come back at {nextTime} to fish for your next gift! (real)</p>
     </div>
   );
