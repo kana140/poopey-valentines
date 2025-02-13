@@ -3,46 +3,48 @@ import "./LoadingBar.css";
 import convertSeconds from "convert-seconds";
 
 const LoadingBar = () => {
-  const [percentage, setPercentage] = useState(0); // Starting at 0%
+  const nineAM = new Date();
+  nineAM.setHours(9, 0, 0, 0);
 
-  const schedule = {
-    9: { to: "12", percentage: 25 },
-    12: { to: "15", percentage: 50 },
-    15: { to: "18", percentage: 75 },
-    18: { to: "9", percentage: 100 },
-  };
+  const sixPM = new Date();
+  sixPM.setHours(18, 0, 0, 0);
 
-  const currentMoment = new Date();
-  const currentHour = currentMoment.getHours();
-  const currentTime = currentMoment.getTime();
-  const sixPM = new Date(
-    currentMoment.getFullYear(),
-    currentMoment.getMonth(),
-    currentMoment.getDate(),
-    18,
+  const totalDuration = (sixPM.getTime() - nineAM.getTime()) / 1000;
+  const now = new Date().getTime();
+  const elapsedTime = (now - nineAM.getTime()) / 1000;
+  const initialPercentage = Math.max(
     0,
-    0,
-    0
+    Math.min((elapsedTime / totalDuration) * 100, 100)
   );
-  // const timeLeft = (sixPM.getTime() - currentTime) / 1000;
-  var timeLeft = (sixPM.getTime() - currentTime) / 1000;
-  if (timeLeft < 0) timeLeft = 0;
+
+  const [timeLeft, setTimeLeft] = useState((sixPM.getTime() - now) / 1000);
+  const [percentage, setPercentage] = useState(initialPercentage);
 
   useEffect(() => {
-    if (timeLeft > 0) {
-      const interval = setInterval(() => {
-        // setTimeLeft((prevTime) => prevTime - 1);
-      }, 1000);
-
-      // setPercentage((timeLeft / duration) * 100);
-      setPercentage((sixPM.getTime() / currentTime) * 100);
-
-      return () => clearInterval(interval);
-    } else {
+    if (timeLeft <= 0) {
       setPercentage(100);
-      clearInterval();
+      return;
     }
-  }, [timeLeft]);
+
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const remainingTime = (sixPM.getTime() - currentTime) / 1000;
+      const elapsedTime = (currentTime - nineAM.getTime()) / 1000;
+
+      if (remainingTime <= 0) {
+        setTimeLeft(0);
+        setPercentage(100);
+        clearInterval(interval);
+      } else {
+        setTimeLeft(remainingTime);
+        setPercentage(
+          Math.max(0, Math.min((elapsedTime / totalDuration) * 100, 100))
+        );
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [timeLeft, totalDuration]);
 
   return (
     <div className="loading-container">
