@@ -54,6 +54,12 @@ const LoadingBar = () => {
         {convertSeconds(timeLeft).minutes} minutes and{" "}
         {convertSeconds(timeLeft).seconds} seconds left to catch fish!
       </div>
+      <div className="time-markers">
+        <span className="time-marker">9AM</span>
+        <span className="time-marker">12PM</span>
+        <span className="time-marker">3PM</span>
+        <span className="time-marker">6PM</span>
+      </div>
     </div>
   );
 };
