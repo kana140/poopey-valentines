@@ -32,10 +32,10 @@ export default function MainContainer() {
       { item: "david jr", image: davidjr },
     ],
     "18:00": [
-      {
-        item: "whiskey",
-        image: whiskey,
-      },
+      // {
+      //   item: "whiskey",
+      //   image: whiskey,
+      // },
       { item: "giorno", image: giorno },
       { item: "david jr", image: davidjr },
     ],
