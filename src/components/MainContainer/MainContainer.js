@@ -10,6 +10,7 @@ import ticket from "../../assets/characters/prizes/ticket.png";
 import whiskey from "../../assets/characters/prizes/whiskey.png";
 import giorno from "../../assets/characters/prizes/giorno.png";
 import clawMachine from "../../assets/characters/prizes/clawmachine.png";
+import davidjr from "../../assets/characters/prizes/davidjr.png";
 
 export default function MainContainer() {
   const [fishingDisabled, setFishingDisabled] = useState(false);
@@ -23,12 +24,12 @@ export default function MainContainer() {
     "12:00": [
       { item: "voucher", image: ticket },
       { item: "giorno", image: giorno },
-      { item: "a claw machine", image: clawMachine },
+      { item: "david jr", image: davidjr },
     ],
     "15:00": [
       { item: "a picture", image: picture },
       { item: "giorno", image: giorno },
-      { item: "a claw machine", image: clawMachine },
+      { item: "david jr", image: davidjr },
     ],
     "18:00": [
       {
@@ -36,7 +37,7 @@ export default function MainContainer() {
         image: whiskey,
       },
       { item: "giorno", image: giorno },
-      { item: "a claw machine", image: clawMachine },
+      { item: "david jr", image: davidjr },
     ],
   };
 

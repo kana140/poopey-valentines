@@ -6,7 +6,9 @@ export default function PrizeWindow({
   showPrizeWindow,
   setPrizeWindow,
 }) {
-  var randomPrize = ["giorno", "a claw machine"].includes(prize?.item);
+  var randomPrize = ["giorno", "a claw machine", "david jr"].includes(
+    prize?.item
+  );
   return (
     <div
       className="prizeWindow"
