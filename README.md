@@ -2,6 +2,7 @@
 
 A fun, interactive Valentine’s Day website created as a surprise gift.  
 Throughout the day, the site reveals new images, pixel drawings, and little messages inspired by shared jokes and favorite things (like peanuts and fishing!).
+https://poopey-valentines.vercel.app/
 
 ---
 
@@ -52,3 +53,4 @@ This project was a chance to experiment with time-based content, React, and a bi
 --- 
 
 ❤️ A small project with a lot of heart. Feel free to fork this repo and use it as a starting point to build something personal for someone special to you! :) 
+
